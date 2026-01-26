@@ -1,10 +1,8 @@
 package com.thlam05.letChat.models;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -36,13 +34,4 @@ public class UserFriend {
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
-}
-
-@Embeddable
-@Getter
-@Setter
-@AllArgsConstructor
-class UserFriendId implements Serializable {
-    private String userId;
-    private String friendId;
 }
