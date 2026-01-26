@@ -39,6 +39,7 @@ CREATE TABLE notifications (
 CREATE TABLE user_friends(
 	user_id CHAR(36) NOT NULL,
     friend_id CHAR(36) NOT NULL,
+    status VARCHAR(20),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     
     PRIMARY KEY (user_id, friend_id),
