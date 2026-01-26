@@ -7,6 +7,6 @@ import com.thlam05.letChat.models.UserFriend;
 import com.thlam05.letChat.models.UserFriendId;
 
 @Repository
-public interface UserFriendRepository extends JpaRepository<UserFriendId, UserFriend> {
+public interface UserFriendRepository extends JpaRepository<UserFriend, UserFriendId> {
 
 }

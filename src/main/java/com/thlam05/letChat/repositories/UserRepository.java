@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import com.thlam05.letChat.models.User;
 
 @Repository
-public interface UserRepository extends JpaRepository<String, User> {
+public interface UserRepository extends JpaRepository<User, String> {
 }

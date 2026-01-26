@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.thlam05.letChat.models.Notification;
 
 @Repository
-public interface NotificationRepository extends JpaRepository<String, Notification> {
+public interface NotificationRepository extends JpaRepository<Notification, String> {
 
 }

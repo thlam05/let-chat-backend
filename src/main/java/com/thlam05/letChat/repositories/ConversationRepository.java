@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.thlam05.letChat.models.Conversation;
 
 @Repository
-public interface ConversationRepository extends JpaRepository<String, Conversation> {
+public interface ConversationRepository extends JpaRepository<Conversation, String> {
 
 }
