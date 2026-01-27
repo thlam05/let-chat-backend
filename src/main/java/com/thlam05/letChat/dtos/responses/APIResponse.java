@@ -3,6 +3,7 @@ package com.thlam05.letChat.dtos.responses;
 import com.thlam05.letChat.enums.ResponseCode;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,6 +12,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class APIResponse<T> {
     private int code;
     private String message;
