@@ -4,8 +4,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.thlam05.letChat.dtos.requests.LoginRequest;
+import com.thlam05.letChat.dtos.requests.RegisterRequest;
 import com.thlam05.letChat.dtos.responses.APIResponse;
 import com.thlam05.letChat.dtos.responses.LoginResponse;
+import com.thlam05.letChat.dtos.responses.RegisterResponse;
 import com.thlam05.letChat.services.AuthService;
 
 import jakarta.validation.Valid;
@@ -25,6 +27,13 @@ public class AuthController {
         LoginResponse loginResponse = authService.handleLogin(request.getUsername(), request.getPassword());
 
         return new APIResponse<LoginResponse>(loginResponse);
+    }
+
+    @PostMapping("/register")
+    public APIResponse<RegisterResponse> handleRegister(@Valid @RequestBody RegisterRequest request) {
+        RegisterResponse registerResponse = authService.handleRegister(request.getUsername(), request.getPassword());
+
+        return new APIResponse<RegisterResponse>(registerResponse);
     }
 
 }

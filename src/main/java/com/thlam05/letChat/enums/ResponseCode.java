@@ -15,7 +15,8 @@ public enum ResponseCode {
     NOT_FOUND(4, "Can not find", HttpStatus.NOT_FOUND),
     INTERNAL_SERVER_ERROR(5, "Server is error", HttpStatus.INTERNAL_SERVER_ERROR),
 
-    BAD_LOGIN_REQUEST(6, "Username or password is wrong", HttpStatus.BAD_REQUEST);
+    BAD_LOGIN_REQUEST(6, "Username or password is wrong", HttpStatus.BAD_REQUEST),
+    USER_EXITED(7, "Username already exists", HttpStatus.BAD_REQUEST);
 
     private final int code;
     private final String message;
