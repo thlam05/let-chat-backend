@@ -8,6 +8,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.nimbusds.jose.JOSEException;
 import com.thlam05.letChat.dtos.responses.LoginResponse;
 import com.thlam05.letChat.dtos.responses.RegisterResponse;
 import com.thlam05.letChat.enums.ResponseCode;
@@ -20,7 +21,10 @@ public class AuthService {
     @Autowired
     UserRepository userRepository;
 
-    public LoginResponse handleLogin(String username, String password) {
+    @Autowired
+    JwtService jwtService;
+
+    public LoginResponse handleLogin(String username, String password) throws JOSEException {
         User user = userRepository.findByUsername(username)
                 .orElseThrow(() -> new AppException(ResponseCode.BAD_LOGIN_REQUEST));
 
@@ -30,9 +34,11 @@ public class AuthService {
         if (!authenticated)
             throw new AppException(ResponseCode.BAD_LOGIN_REQUEST);
 
+        String token = jwtService.generateToken(user.getId());
+
         return LoginResponse.builder()
                 .authenticated(authenticated)
-                .token(password)
+                .token(token)
                 .build();
     }
 
