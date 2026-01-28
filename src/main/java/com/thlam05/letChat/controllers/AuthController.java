@@ -3,6 +3,7 @@ package com.thlam05.letChat.controllers;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.nimbusds.jose.JOSEException;
 import com.thlam05.letChat.dtos.requests.LoginRequest;
 import com.thlam05.letChat.dtos.requests.RegisterRequest;
 import com.thlam05.letChat.dtos.responses.APIResponse;
@@ -23,7 +24,7 @@ public class AuthController {
     AuthService authService;
 
     @PostMapping("/login")
-    public APIResponse<LoginResponse> handleLogin(@Valid @RequestBody LoginRequest request) {
+    public APIResponse<LoginResponse> handleLogin(@Valid @RequestBody LoginRequest request) throws JOSEException {
         LoginResponse loginResponse = authService.handleLogin(request.getUsername(), request.getPassword());
 
         return new APIResponse<LoginResponse>(loginResponse);

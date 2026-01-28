@@ -1,5 +1,6 @@
 package com.thlam05.letChat.services;
 
+import java.text.ParseException;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
@@ -12,8 +13,10 @@ import com.nimbusds.jose.JOSEException;
 import com.nimbusds.jose.JWSAlgorithm;
 import com.nimbusds.jose.JWSHeader;
 import com.nimbusds.jose.JWSObject;
+import com.nimbusds.jose.JWSVerifier;
 import com.nimbusds.jose.Payload;
 import com.nimbusds.jose.crypto.MACSigner;
+import com.nimbusds.jose.crypto.MACVerifier;
 import com.nimbusds.jwt.JWTClaimsSet;
 
 @Service
@@ -42,6 +45,30 @@ public class JwtService {
             return jwsObject.serialize();
         } catch (JOSEException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public JWTClaimsSet verifyToken(String token) {
+        try {
+            JWSObject jwsObject = JWSObject.parse(token);
+
+            JWSVerifier verifier = new MACVerifier(secret.getBytes());
+            if (!jwsObject.verify(verifier)) {
+                throw new RuntimeException("Invalid JWT signature");
+            }
+
+            JWTClaimsSet claims = JWTClaimsSet.parse(
+                    jwsObject.getPayload().toJSONObject());
+
+            Date expirationTime = claims.getExpirationTime();
+            if (expirationTime == null || expirationTime.before(new Date())) {
+                throw new RuntimeException("JWT expired");
+            }
+
+            return claims;
+
+        } catch (ParseException | JOSEException e) {
+            throw new RuntimeException("Invalid JWT token", e);
         }
     }
 }
