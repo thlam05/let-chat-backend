@@ -1,20 +1,20 @@
-package com.thlam05.letChat.exceptions;
+package com.thlam05.letchat.exceptions;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.thlam05.letChat.dtos.responses.APIResponse;
-import com.thlam05.letChat.enums.ResponseCode;
+import com.thlam05.letchat.dtos.responses.APIResponse;
+import com.thlam05.letchat.enums.ResponseCode;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(value = AppException.class)
-    ResponseEntity<APIResponse<?>> handlingAppException(AppException exception) {
+    ResponseEntity<APIResponse<Void>> handlingAppException(AppException exception) {
         ResponseCode code = exception.getCode();
-        APIResponse<?> apiResponse = new APIResponse<>();
+        APIResponse<Void> apiResponse = new APIResponse<>(null);
 
         apiResponse.setCode(code.getCode());
         apiResponse.setMessage(code.getMessage());
@@ -23,9 +23,10 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(value = MethodArgumentNotValidException.class)
-    ResponseEntity<APIResponse<?>> handlingMethodArgumentNotValidException(MethodArgumentNotValidException exception) {
+    ResponseEntity<APIResponse<Void>> handlingMethodArgumentNotValidException(
+            MethodArgumentNotValidException exception) {
         ResponseCode code = ResponseCode.BAD_REQUEST;
-        APIResponse<?> apiResponse = new APIResponse<>();
+        APIResponse<Void> apiResponse = new APIResponse<>(null);
 
         apiResponse.setCode(code.getCode());
         apiResponse.setMessage(exception.getBindingResult()

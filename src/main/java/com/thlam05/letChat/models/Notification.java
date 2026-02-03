@@ -1,4 +1,4 @@
-package com.thlam05.letChat.models;
+package com.thlam05.letchat.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

@@ -1,4 +1,4 @@
-package com.thlam05.letChat.services;
+package com.thlam05.letchat.services;
 
 import org.springframework.stereotype.Service;
 

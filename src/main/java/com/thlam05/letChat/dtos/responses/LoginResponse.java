@@ -1,4 +1,4 @@
-package com.thlam05.letChat.dtos.responses;
+package com.thlam05.letchat.dtos.responses;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

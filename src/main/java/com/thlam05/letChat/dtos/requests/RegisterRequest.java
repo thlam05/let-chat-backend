@@ -1,4 +1,4 @@
-package com.thlam05.letChat.dtos.requests;
+package com.thlam05.letchat.dtos.requests;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
