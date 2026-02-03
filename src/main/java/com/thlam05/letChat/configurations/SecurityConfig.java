@@ -1,4 +1,4 @@
-package com.thlam05.letChat.configurations;
+package com.thlam05.letchat.configurations;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package com.thlam05.letChat.enums;
+package com.thlam05.letchat.enums;
 
 import org.springframework.http.HttpStatus;
 

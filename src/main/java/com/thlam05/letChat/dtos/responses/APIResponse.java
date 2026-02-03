@@ -1,6 +1,6 @@
-package com.thlam05.letChat.dtos.responses;
+package com.thlam05.letchat.dtos.responses;
 
-import com.thlam05.letChat.enums.ResponseCode;
+import com.thlam05.letchat.enums.ResponseCode;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

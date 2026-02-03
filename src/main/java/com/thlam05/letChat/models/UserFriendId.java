@@ -1,4 +1,4 @@
-package com.thlam05.letChat.models;
+package com.thlam05.letchat.models;
 
 import java.io.Serializable;
 

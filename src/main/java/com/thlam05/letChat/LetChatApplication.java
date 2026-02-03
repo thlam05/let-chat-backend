@@ -1,4 +1,4 @@
-package com.thlam05.letChat;
+package com.thlam05.letchat;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

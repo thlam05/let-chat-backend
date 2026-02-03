@@ -1,4 +1,4 @@
-package com.thlam05.letChat.services;
+package com.thlam05.letchat.services;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
@@ -9,12 +9,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.nimbusds.jose.JOSEException;
-import com.thlam05.letChat.dtos.responses.LoginResponse;
-import com.thlam05.letChat.dtos.responses.RegisterResponse;
-import com.thlam05.letChat.enums.ResponseCode;
-import com.thlam05.letChat.exceptions.AppException;
-import com.thlam05.letChat.models.User;
-import com.thlam05.letChat.repositories.UserRepository;
+import com.thlam05.letchat.dtos.responses.LoginResponse;
+import com.thlam05.letchat.dtos.responses.RegisterResponse;
+import com.thlam05.letchat.enums.ResponseCode;
+import com.thlam05.letchat.exceptions.AppException;
+import com.thlam05.letchat.models.User;
+import com.thlam05.letchat.repositories.UserRepository;
 
 @Service
 public class AuthService {

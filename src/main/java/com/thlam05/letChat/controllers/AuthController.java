@@ -1,15 +1,15 @@
-package com.thlam05.letChat.controllers;
+package com.thlam05.letchat.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nimbusds.jose.JOSEException;
-import com.thlam05.letChat.dtos.requests.LoginRequest;
-import com.thlam05.letChat.dtos.requests.RegisterRequest;
-import com.thlam05.letChat.dtos.responses.APIResponse;
-import com.thlam05.letChat.dtos.responses.LoginResponse;
-import com.thlam05.letChat.dtos.responses.RegisterResponse;
-import com.thlam05.letChat.services.AuthService;
+import com.thlam05.letchat.dtos.requests.LoginRequest;
+import com.thlam05.letchat.dtos.requests.RegisterRequest;
+import com.thlam05.letchat.dtos.responses.APIResponse;
+import com.thlam05.letchat.dtos.responses.LoginResponse;
+import com.thlam05.letchat.dtos.responses.RegisterResponse;
+import com.thlam05.letchat.services.AuthService;
 
 import jakarta.validation.Valid;
 

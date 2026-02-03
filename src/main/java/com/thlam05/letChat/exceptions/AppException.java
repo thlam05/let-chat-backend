@@ -1,6 +1,6 @@
-package com.thlam05.letChat.exceptions;
+package com.thlam05.letchat.exceptions;
 
-import com.thlam05.letChat.enums.ResponseCode;
+import com.thlam05.letchat.enums.ResponseCode;
 
 import lombok.Getter;
 import lombok.Setter;

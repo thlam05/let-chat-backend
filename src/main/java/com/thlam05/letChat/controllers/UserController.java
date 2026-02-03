@@ -1,4 +1,4 @@
-package com.thlam05.letChat.controllers;
+package com.thlam05.letchat.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
