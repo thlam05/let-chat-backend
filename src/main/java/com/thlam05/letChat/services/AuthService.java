@@ -16,13 +16,13 @@ import com.thlam05.letchat.exceptions.AppException;
 import com.thlam05.letchat.models.User;
 import com.thlam05.letchat.repositories.UserRepository;
 
-@Service
-public class AuthService {
-    @Autowired
-    UserRepository userRepository;
+import lombok.AllArgsConstructor;
 
-    @Autowired
-    JwtService jwtService;
+@Service
+@AllArgsConstructor
+public class AuthService {
+    private final UserRepository userRepository;
+    private final JwtService jwtService;
 
     public LoginResponse handleLogin(String username, String password) throws JOSEException {
         User user = userRepository.findByUsername(username)

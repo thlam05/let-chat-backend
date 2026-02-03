@@ -12,18 +12,16 @@ import com.thlam05.letchat.dtos.responses.RegisterResponse;
 import com.thlam05.letchat.services.AuthService;
 
 import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("/auth")
+@AllArgsConstructor
 public class AuthController {
     private final AuthService authService;
-
-    public AuthController(AuthService authService) {
-        this.authService = authService;
-    }
 
     @PostMapping("/login")
     public APIResponse<LoginResponse> handleLogin(@Valid @RequestBody LoginRequest request) throws JOSEException {
